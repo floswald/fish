@@ -1,0 +1,22 @@
+jobs:
+  install-fish-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install fish shell
+        uses: fish-shop/install-fish-shell@v1
+  say-hello-fish: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello and print shell version
+        shell: fish
+        run: |
+          echo "Hello, world!"
+          fish --version
+  say-hello-bash: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello and print shell version
+        shell: bash
+        run: |
+          echo "Hello, world!"
+          bash --version
