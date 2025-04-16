@@ -1,21 +1,20 @@
+name: testing fish shell
+on: [push]
 jobs:
-  install-fish-shell:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Install fish shell
+      - name: Set up fish shell
         uses: fish-shop/install-fish-shell@v1
-  say-hello-fish: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Say hello and print shell version
+      - name: Run fish script
         shell: fish
         run: |
           echo "Hello, world!"
           fish --version
-  say-hello-bash: 
+  test-bash:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello and print shell version
+      - name: Run bash script
         shell: bash
         run: |
           echo "Hello, world!"
